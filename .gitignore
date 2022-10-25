@@ -1,3 +1,8 @@
+# Settings
+.DS_Store/ 
+.vscode/ 
+.idea/
+
 # Logs
 logs
 *.log
