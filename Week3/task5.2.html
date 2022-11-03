@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Практичне завдання 5.2: CSS селектори. Типи селекторів</title>
+    <style>
+      html {
+        font-family: "sans-serif";
+      }
+
+      body {
+        background-color: #efefef;
+      }
+
+      p {
+        color: darkgray;
+      }
+
+      li {
+        color: blue;
+      }
+
+      /* ========== Початок зони редагування =============== */
+      h1 {
+        text-decoration: underline;
+      }
+
+      #first-p {
+        font-style: italic;
+      }
+
+      .second-p {
+        font-weight: bold;
+      }
+
+      ol li::after {
+        content: "Псевдоелемент";
+        color: gray;
+        background-color: yellow;
+      }
+
+      [type="text"] {
+        text-transform: lowercase;
+      }
+      /* ========== Кінець зони редагування =============== */
+    </style>
+  </head>
+  <body>
+    <h1>Цей заголовок підкреслено</h1>
+    <p id="first-p">Перший параграф курсивом</p>
+    <p class="second-p">Другий параграф виділений</p>
+    <ol>
+      <li>Нумерований список</li>
+      <li>з трьох елементів</li>
+      <li>з псевдоелементами</li>
+    </ol>
+    <ul>
+      <li>Не нумерований список</li>
+      <li>який заважає</li>
+    </ul>
+    <input type="text" />
+  </body>
+</html>

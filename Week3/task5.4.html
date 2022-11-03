@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Практичне завдання 5.4: Позиціонування</title>
+    <style>
+      .container {
+        font-family: "sans-serif";
+        list-style: none;
+        padding: 1em 2em;
+        border: 1px solid #6b4848;
+        margin: 0;
+        border-radius: 0.5em;
+      }
+
+      .container li {
+        margin: 0 0.125em 0.25em 0;
+        padding: 2em;
+        border: 1px solid #bbb;
+        display: inline-block;
+        font-size: 1.5em;
+        background-color: #e3e6c7;
+        border-radius: 0.25em;
+      }
+
+      .positioning li {
+        background-color: #828fdd;
+      }
+
+      /* ========== Початок зони редагування =============== */
+      ul {
+        position: relative;
+      }
+
+      li:nth-child(2) {
+        position: absolute;
+        background-color: #0000bb;
+        top: 30%;
+      }
+      /* ========== Кінець зони редагування =============== */
+    </style>
+  </head>
+  <body>
+    <h1>Практичне завдання з CSS: Позиціювання</h1>
+    <section>
+      <ul class="container positioning">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+      </ul>
+    </section>
+  </body>
+</html>
