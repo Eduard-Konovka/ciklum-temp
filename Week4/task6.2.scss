@@ -1,0 +1,18 @@
+$headerColor: #104852;
+$textColor: #a51b5a;
+$baseMargin: 0.5em;
+$fontFamily: 'Roboto';
+
+@mixin container {
+  margin: $baseMargin;
+}
+
+@mixin header {
+  font-family: $fontFamily;
+  color: $headerColor !important;
+}
+
+@mixin text {
+  font-family: $fontFamily !important;
+    color: $textColor  ;
+}

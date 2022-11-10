@@ -1,0 +1,31 @@
+@media screen and (max-width: 1200px) {
+  #first,
+  #second,
+  #third {
+    border: 1px solid yellow;
+  }
+}
+
+@media screen and (max-width: 1224px), screen and (min-width: 1400px) {
+  #first,
+  #second {
+    width: 50px;
+  }
+
+  #third {
+    width: 75px;
+  }
+}
+
+@media (orientation: landscape) {
+  #blocksWrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #first,
+  #second,
+  #third {
+    width: 10px;
+  }
+}
