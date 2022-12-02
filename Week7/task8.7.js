@@ -6,7 +6,7 @@ const person = {
   occupation: "developer",
   isAdmin: true,
   process: function () {
-    return processPerson(this);
+    return processPerson.call(this);
   },
 };
 
@@ -18,12 +18,12 @@ const person1 = {
   occupation: "designer",
   isAdmin: false,
   process: function () {
-    return processPerson(this);
+    return processPerson.call(this);
   },
 };
 
-function processPerson(context) {
-  if (context && typeof context === "object") {
+function processPerson() {
+  if (this && typeof this === "object") {
     const genders = {
       male: "Чоловік",
       female: "Жінка",
@@ -31,13 +31,13 @@ function processPerson(context) {
 
     let summary = "Інформація про особу: \n";
 
-    summary += genders[context.gender] || "Особа невідомої статі";
-    summary += " " + context.name;
-    summary += " віком " + context.age + " роки(-ів)";
-    summary += " має освіту на рівні " + context.education;
-    summary += " та працює на посаді " + context.occupation + ".";
+    summary += genders[this.gender] || "Особа невідомої статі";
+    summary += " " + this.name;
+    summary += " віком " + this.age + " роки(-ів)";
+    summary += " має освіту на рівні " + this.education;
+    summary += " та працює на посаді " + this.occupation + ".";
 
-    if (context.isAdmin) {
+    if (this.isAdmin) {
       summary += " Є адміністратором.";
     }
 
@@ -47,6 +47,5 @@ function processPerson(context) {
   throw new Error("Очікується об'єкт");
 }
 
-console.log(processPerson(person));
 console.log(person.process());
 console.log(person1.process());
