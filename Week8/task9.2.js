@@ -1,29 +1,36 @@
 function createWrapper() {
-  const params = arguments;
-  const func = params[0];
-  const callback = params[1];
+  // ========== Початок зони редагування ==============
+  const func = arguments[0];
+  const callback = arguments[1];
 
   return function () {
-    const props = arguments;
-
-    if (Math.random() < 0.5) {
-      callback("Error!");
-    } else {
-      callback(null, () => func(props));
+    try {
+      callback(null, func(...arguments));
+    } catch (error) {
+      callback(error, null);
     }
   };
+  // ========== Кінець зони редагування ===============
 }
 
-function someFn() {
-  console.log(arguments);
+function fn(...theArgs) {
+  setTimeout(() => {
+    const arr = [];
+
+    for (const arg of theArgs) {
+      arr.push(arg);
+    }
+
+    console.log("Arguments ---> ", arr);
+  }, 100);
 }
 
-function cb(error, fn) {
+function cb(error, fun) {
   if (error) {
-    console.error(error);
+    console.error("Error ---> ", error);
   } else {
-    fn();
+    fun;
   }
 }
 
-createWrapper(someFn, cb)();
+createWrapper(fn(3, 5), cb);
