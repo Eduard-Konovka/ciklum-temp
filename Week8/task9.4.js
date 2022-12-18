@@ -1,35 +1,22 @@
 const successedPromise = async () => {
-  return new Promise((resolve, reject) => {
+  return await new Promise((resolve, reject) =>
     setTimeout(() => {
       resolve("Successed");
-    }),
-      100;
-  });
+    }, 100)
+  );
 };
 
-const failedPromise = () => {
-  return new Promise((resolve, reject) => {
+const failedPromise = async () => {
+  return await new Promise((resolve, reject) =>
     setTimeout(() => {
       reject(new Error("Failed"));
-      // throw new Error("Failed");
-    }),
-      100;
-  });
+    }, 100)
+  );
 };
 
 const asyncFunc = async (fn) => {
-  let message;
-
-  await fn()
-    .then(function (data) {
-      message = data;
-    })
-    .catch((error) => {
-      throw error;
-    });
-
   try {
-    return message;
+    return await fn();
   } catch (error) {
     return error;
   }
