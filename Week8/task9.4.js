@@ -1,16 +1,16 @@
-const successedPromise = async () => {
-  return await new Promise((resolve, reject) =>
+const successedPromise = () => {
+  return new Promise((resolve, reject) =>
     setTimeout(() => {
       resolve("Successed");
     }, 100)
   );
 };
 
-const failedPromise = async () => {
-  return await new Promise((resolve, reject) =>
+const failedPromise = () => {
+  return new Promise((resolve, reject) =>
     setTimeout(() => {
-      reject(new Error("Failed"));
-    }, 100)
+      reject("Failed");
+    }, 150)
   );
 };
 
@@ -18,12 +18,11 @@ const asyncFunc = async (fn) => {
   try {
     return await fn();
   } catch (error) {
-    return error;
+    throw Error(error);
   }
 };
 
-//
-
+// для проверки ======================
 const visualize = async (cb) => {
   const result = await asyncFunc(cb);
   console.log(result);
@@ -31,3 +30,4 @@ const visualize = async (cb) => {
 
 visualize(successedPromise);
 visualize(failedPromise);
+// ===================================
