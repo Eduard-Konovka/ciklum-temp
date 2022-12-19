@@ -1,23 +1,25 @@
 async function handleRequest(options) {
   // ========== Початок зони редагування ==============
-  let correctType = typeof options === "string" || typeof options === "object";
+  let correctType = typeof options === "object" || typeof options === "string";
   if (!correctType) {
     throw new Error("Expecting string or object as fetch parameter");
   }
 
-  const result = fetch(options);
+  return fetch(options).then((response) => {
+    return new Promise((resolve, reject) => {
+      if (response.status >= 200 && response.status < 400) {
+        resolve(response.json());
+      } else if (response.status >= 400) {
+        reject(new Error(response.status));
+      }
+    });
 
-  return result;
-
-  // return fetch(typeof options === "string" ? options : options.url).then(
-  //   (response) => {
-  //     if (response.status >= 200 && response.status < 400) {
-  //       return Promise.resolve(response.json());
-  //     } else if (response.status >= 400) {
-  //       throw Promise.reject(new Error(response.status));
-  //     }
-  //   }
-  // );
+    // if (response.status >= 200 && response.status < 400) {
+    //   return Promise.resolve(response.json());
+    // } else if (response.status >= 400) {
+    //   throw Promise.reject(new Error(response.status));
+    // }
+  });
   // ========== Кінець зони редагування ===============
 }
 
@@ -32,12 +34,10 @@ const visualize = async (val) => {
 };
 
 const correctUrl = "https://pokeapi.co/api/v2/pokemon/2/";
-
 // visualize(5);
-visualize(correctUrl);
 visualize(new Request(correctUrl));
+// visualize(correctUrl);
 
 const wrongUrl = "https://pokeapi.co/api/v2/pokemon/999/";
-
+visualize(new Request(wrongUrl));
 // visualize(wrongUrl);
-// visualize(new Request(wrongUrl));

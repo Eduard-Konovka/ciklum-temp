@@ -7,8 +7,7 @@ function createPromise(shouldFail = false) {
       } else {
         reject(new Error("error"));
       }
-    }),
-      100;
+    }, 100);
   });
   // ========== Кінець зони редагування ===============
 }
