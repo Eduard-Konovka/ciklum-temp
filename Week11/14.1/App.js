@@ -1,45 +1,43 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { Outlet, NavLink } from "react-router-dom";
 
 export default function App() {
   return (
     <div className="App container">
       {/*========== Початок зони редагування ===============*/}
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-              {/* <NavLink
-                to="/"
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <div className="container-fluid">
+          <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div className="navbar-nav">
+              <NavLink
+                to="home"
                 className={({ isActive }) =>
                   isActive ? "nav-link active" : "nav-link"
                 }
               >
                 Home
               </NavLink>
-
               <NavLink
-                to="/about"
+                to="about"
                 className={({ isActive }) =>
                   isActive ? "nav-link active" : "nav-link"
                 }
               >
                 About
               </NavLink>
-
               <NavLink
-                to="/login"
+                to="login"
                 className={({ isActive }) =>
                   isActive ? "nav-link active" : "nav-link"
                 }
               >
                 Login
-              </NavLink> */}
-
-              <Outlet />
+              </NavLink>
             </div>
           </div>
         </div>
       </nav>
+
+      <Outlet />
       {/*========== Кінець зони редагування ===============*/}
     </div>
   );
