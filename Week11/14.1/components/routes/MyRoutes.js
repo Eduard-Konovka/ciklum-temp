@@ -8,11 +8,13 @@ export default function MyRoutes() {
     /*========== Початок зони редагування ===============*/
   }
   <Routes>
-    <Route to="/" element={Home} />
+    <Route path="/" element={<App />} />
 
-    <Route to="/about" element={About} />
+    <Route path="home" element={<Home />} />
 
-    <Route to="/login" element={Login} />
+    <Route path="about" element={<About />} />
+
+    <Route path="login" element={<Login />} />
   </Routes>;
   {
     /*========== Кінець зони редагування ===============*/
