@@ -48,7 +48,7 @@ export default function Slider(props) {
           className="progress-bar"
           role="progressbar"
           style={{ width: `${progress}%` }}
-          aria-valuenow="50"
+          aria-valuenow={progress}
           aria-valuemin={MIN_VALUE}
           aria-valuemax={MAX_VALUE}
         ></div>
