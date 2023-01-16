@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { ContactsProvider } from "../context/use-contacts";
 import Avatar from "./Avatar";
 import "./footer.css";
 

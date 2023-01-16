@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { UserProvider } from "../context/use-user";
 import User from "./User";
 import "./header.css";
 
