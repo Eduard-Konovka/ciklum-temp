@@ -1,9 +1,9 @@
 import { useContext } from "react";
-import { UserProvider } from "../context/use-user";
+import { userContext } from "../context/use-user";
 import "./avatar.css";
 
 export default function Avatar() {
-  const userData = useContext(UserProvider);
+  const userData = useContext(userContext);
 
   return (
     <div className="avatar">

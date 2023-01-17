@@ -1,10 +1,10 @@
 import { useContext } from "react";
-import { UserProvider } from "../context/use-user";
+import { userContext } from "../context/use-user";
 import User from "./User";
 import "./header.css";
 
 export default function Header() {
-  const userData = useContext(UserProvider);
+  const userData = useContext(userContext);
 
   return (
     <header className="header row">

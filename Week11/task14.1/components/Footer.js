@@ -1,10 +1,10 @@
 import { useContext } from "react";
-import { ContactsProvider } from "../context/use-contacts";
+import { contactsContext } from "../context/use-contacts";
 import Avatar from "./Avatar";
 import "./footer.css";
 
 export default function Footer() {
-  const contactData = useContext(ContactsProvider);
+  const contactData = useContext(contactsContext);
 
   return (
     <footer className="footer">

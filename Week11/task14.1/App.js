@@ -29,8 +29,8 @@ export default function App() {
 
   return (
     <>
-      <UserProvider.Provider value={userData}>
-        <ContactsProvider.Provider value={contactData}>
+      <UserProvider value={userData}>
+        <ContactsProvider value={contactData}>
           <Header />
           <hr />
           <main className="main">
@@ -51,8 +51,8 @@ export default function App() {
           </main>
           <hr />
           <Footer />
-        </ContactsProvider.Provider>
-      </UserProvider.Provider>
+        </ContactsProvider>
+      </UserProvider>
     </>
   );
 }

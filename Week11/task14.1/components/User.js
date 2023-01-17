@@ -1,10 +1,10 @@
 import { useContext } from "react";
-import { ContactsProvider } from "../context/use-contacts";
+import { contactsContext } from "../context/use-contacts";
 import Avatar from "./Avatar";
 import "./user.css";
 
 export default function User() {
-  const contactData = useContext(ContactsProvider);
+  const contactData = useContext(contactsContext);
 
   return (
     <div className="user">

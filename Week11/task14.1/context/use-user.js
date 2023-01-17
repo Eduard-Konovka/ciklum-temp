@@ -1,3 +1,5 @@
 import { createContext } from "react";
 
-export const UserProvider = createContext();
+export const userContext = createContext();
+
+export const UserProvider = userContext.Provider;
