@@ -1,13 +1,12 @@
-import { useContext } from "react";
-import { userContext } from "../context/use-user";
+import { useUser } from "../context/use-user";
 import "./avatar.css";
 
 export default function Avatar() {
-  const userData = useContext(userContext);
+  const { avatar } = useUser();
 
   return (
     <div className="avatar">
-      <img className="avatar__image" src={userData.avatar} alt="avatar" />
+      <img className="avatar__image" src={avatar} alt="avatar" />
     </div>
   );
 }

@@ -1,16 +1,15 @@
-import { useContext } from "react";
-import { userContext } from "../context/use-user";
+import { useUser } from "../context/use-user";
 import User from "./User";
 import "./header.css";
 
 export default function Header() {
-  const userData = useContext(userContext);
+  const { name, surname } = useUser();
 
   return (
     <header className="header row">
       <h2>Header</h2>
       <h3>
-        {userData.name} {userData.surname}
+        {name} {surname}
       </h3>
       <User />
     </header>

@@ -1,5 +1,7 @@
-import { createContext } from "react";
+import { createContext, useContext } from "react";
 
-export const contactsContext = createContext();
+const contactsContext = createContext(null);
 
 export const ContactsProvider = contactsContext.Provider;
+
+export const useContacts = () => useContext(contactsContext);

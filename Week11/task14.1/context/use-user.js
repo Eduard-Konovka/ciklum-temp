@@ -1,5 +1,7 @@
-import { createContext } from "react";
+import { createContext, useContext } from "react";
 
-export const userContext = createContext();
+const userContext = createContext(null);
 
 export const UserProvider = userContext.Provider;
+
+export const useUser = () => useContext(userContext);

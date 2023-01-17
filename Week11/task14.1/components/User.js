@@ -1,19 +1,18 @@
-import { useContext } from "react";
-import { contactsContext } from "../context/use-contacts";
+import { useContacts } from "../context/use-contacts";
 import Avatar from "./Avatar";
 import "./user.css";
 
 export default function User() {
-  const contactData = useContext(contactsContext);
+  const { headerTel, email } = useContacts();
 
   return (
     <div className="user">
       <div className="user__content">
         <p className="user__phone">
-          Телефон: <span>{contactData.headerTel}</span>
+          Телефон: <span>{headerTel}</span>
         </p>
         <p className="user__email">
-          Електронна пошта: <span>{contactData.email}</span>
+          Електронна пошта: <span>{email}</span>
         </p>
       </div>
       <Avatar />
